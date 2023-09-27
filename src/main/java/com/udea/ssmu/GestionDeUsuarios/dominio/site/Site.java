@@ -15,15 +15,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "codeSite")
 public class Site {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long codeSite;
     String name;
     String address;
+    /**
+    @ManyToOne(fetch = FetchType.LAZY)
     User user;
-
-
-
+    **/
 }
