@@ -8,5 +8,10 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-    public List<User> findByCodeUserOrIdentityCard(Long codeUser, String identityCard);
+    public List<User> findByUserCodeOrIdDocument(Long userCode, String idDocument);
+
+
+    boolean existsByEmail(String email);
+
+    boolean existsByIdDocument(String s);
 }

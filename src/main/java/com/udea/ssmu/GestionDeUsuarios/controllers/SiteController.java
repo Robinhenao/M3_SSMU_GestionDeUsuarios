@@ -1,4 +1,4 @@
-package com.udea.ssmu.GestionDeUsuarios.controller;
+package com.udea.ssmu.GestionDeUsuarios.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

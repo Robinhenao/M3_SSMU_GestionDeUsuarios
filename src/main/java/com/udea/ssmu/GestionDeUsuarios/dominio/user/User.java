@@ -1,11 +1,8 @@
 package com.udea.ssmu.GestionDeUsuarios.dominio.user;
 
-import com.udea.ssmu.GestionDeUsuarios.dominio.site.Site;
-
+import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Table(name = "users")
 @Entity(name = "User")
@@ -13,22 +10,25 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "codeUser")
+@EqualsAndHashCode(of = "userCode")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "code_user")
-    private Long codeUser;
+    @Column(name = "user_code")
+    private Long userCode;
     private String name;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "identity_card")
-    private String identityCard;
+    @Column(name = "id_document")
+    private String idDocument;
     private String email;
+    private String password;
 
-    /**
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Site> sites;
-    **/
+    public User(String name, String lastName, String idDocument, String email, String encodedPassword) {
+        this.name = name;
+        this.lastName = lastName;
+        this.idDocument = idDocument;
+        this.email = email;
+        this.password = encodedPassword;
+    }
 }
