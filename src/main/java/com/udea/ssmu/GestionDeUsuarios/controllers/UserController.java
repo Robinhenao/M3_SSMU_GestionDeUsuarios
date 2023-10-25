@@ -3,7 +3,9 @@ package com.udea.ssmu.GestionDeUsuarios.controllers;
 
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
+import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserUpdateData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.interfaces.UserService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 public class UserController {
 
     private UserService userService;
@@ -33,5 +36,12 @@ public class UserController {
     public ResponseEntity<UserData> getUser(@PathVariable Long userCode){
         return ResponseEntity.ok().body(this.userService.getUser(userCode));
     }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<UserData> updateUser(@RequestBody UserUpdateData userUpdateData){
+        return ResponseEntity.ok(this.userService.updateUser(userUpdateData));
+    }
+
 
 }

@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/profile")
+@CrossOrigin
 public class ProfileController {
 
     ProfileService profileService;

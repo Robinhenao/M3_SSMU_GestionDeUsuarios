@@ -2,6 +2,7 @@ package com.udea.ssmu.GestionDeUsuarios.dominio.user;
 
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
+import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserUpdateData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.interfaces.UserService;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.validations.Validator;
 import com.udea.ssmu.GestionDeUsuarios.infra.exceptions.CustomValidationException;
@@ -54,6 +55,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserData getUser(Long userCode) {
        return new UserData(this.userRepository.getReferenceById(userCode));
+    }
+
+    @Override
+    public UserData updateUser(UserUpdateData userUpdateData) {
+        User user = this.userRepository.getReferenceById(userUpdateData.userCode());
+        user.setName(userUpdateData.name());
+        user.setLastName(userUpdateData.lastName());
+        return new UserData(user);
     }
 
 }
