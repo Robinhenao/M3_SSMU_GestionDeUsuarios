@@ -4,10 +4,9 @@ import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserUpdateData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.interfaces.UserService;
-import com.udea.ssmu.GestionDeUsuarios.dominio.user.validations.Validator;
+import com.udea.ssmu.GestionDeUsuarios.dominio.user.validations.UserValidator;
 import com.udea.ssmu.GestionDeUsuarios.infra.exceptions.CustomValidationException;
 import com.udea.ssmu.GestionDeUsuarios.infra.exceptions.DataIntegrityValidationException;
-import jakarta.validation.ValidationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +17,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
-    private List<Validator> validators;
+    private List<UserValidator> validators;
     private PasswordEncoder passwordEncoder;
-    public UserServiceImpl(UserRepository userRepository, List<Validator> validators, PasswordEncoder passwordEncoder){
+    public UserServiceImpl(UserRepository userRepository, List<UserValidator> validators, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
         this.validators = validators;
         this.passwordEncoder = passwordEncoder;

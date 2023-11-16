@@ -1,4 +1,4 @@
-package com.udea.ssmu.GestionDeUsuarios.dominio.profile;
+package com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto;
 
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.User;
 import jakarta.validation.constraints.NotBlank;

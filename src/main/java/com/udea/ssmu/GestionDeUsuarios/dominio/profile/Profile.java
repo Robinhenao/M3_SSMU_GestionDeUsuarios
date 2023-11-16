@@ -30,7 +30,7 @@ public class Profile {
         this.name = name;
         this.image = image;
         this.mainProfile = mainProfile;
-        this.idUser=idUser;
+        this.idUser = idUser;
         this.pin = pin;
     }
 

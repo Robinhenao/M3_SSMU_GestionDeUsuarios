@@ -4,7 +4,7 @@ import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
 import org.springframework.stereotype.Component;
 
 
-public interface Validator {
+public interface UserValidator {
 
     public void validate(UserRegistrationData data);
 }

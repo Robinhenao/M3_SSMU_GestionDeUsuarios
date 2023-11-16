@@ -6,7 +6,7 @@ import com.udea.ssmu.GestionDeUsuarios.infra.exceptions.CustomValidationExceptio
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmailValidation implements Validator {
+public class EmailValidation implements UserValidator {
 
     private UserRepository userRepository;
     public EmailValidation(UserRepository userRepository){
@@ -14,9 +14,8 @@ public class EmailValidation implements Validator {
     }
     @Override
     public void validate(UserRegistrationData data) {
-        if(this.userRepository.existsByEmail(data.email())){
-            System.out.println(this.userRepository.existsByEmail(data.email()));
-            throw new CustomValidationException("Email", "The email (" + data.email() +") is already in use.");
+        if (this.userRepository.existsByIdDocument(data.idDocument())){
+            throw new CustomValidationException("idDocument","The ID document (" + data.idDocument() +") is already in use.");
         }
     }
 }

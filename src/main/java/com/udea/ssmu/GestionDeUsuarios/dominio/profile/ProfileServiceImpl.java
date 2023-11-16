@@ -1,20 +1,21 @@
 package com.udea.ssmu.GestionDeUsuarios.dominio.profile;
 
 
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileData;
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileRegistrationData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
-public class ProfileService {
+public class ProfileServiceImpl implements com.udea.ssmu.GestionDeUsuarios.dominio.profile.interfaces.ProfileService {
 
     private ProfileRepository profileRepository;
     private UserRepository userRepository;
 
-    public ProfileService(ProfileRepository profileRepository) {
+    public ProfileServiceImpl(ProfileRepository profileRepository) {
         this.profileRepository = profileRepository;
     }
 

@@ -6,7 +6,7 @@ import com.udea.ssmu.GestionDeUsuarios.infra.exceptions.CustomValidationExceptio
 import org.springframework.stereotype.Component;
 
 @Component
-public class IdDocumentValidation implements Validator {
+public class IdDocumentValidation implements UserValidator {
     private UserRepository userRepository;
 
     public IdDocumentValidation(UserRepository userRepository){

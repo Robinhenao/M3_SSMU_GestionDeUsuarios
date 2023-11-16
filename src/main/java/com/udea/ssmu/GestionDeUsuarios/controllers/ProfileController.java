@@ -1,9 +1,10 @@
 package com.udea.ssmu.GestionDeUsuarios.controllers;
 
 
-import com.udea.ssmu.GestionDeUsuarios.dominio.profile.ProfileData;
-import com.udea.ssmu.GestionDeUsuarios.dominio.profile.ProfileRegistrationData;
-import com.udea.ssmu.GestionDeUsuarios.dominio.profile.ProfileService;
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileData;
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileRegistrationData;
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.ProfileServiceImpl;
+import com.udea.ssmu.GestionDeUsuarios.dominio.profile.interfaces.ProfileService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ public class ProfileController {
     ProfileService profileService;
 
     public ProfileController(ProfileService profileService) {
+
         this.profileService = profileService;
     }
 
@@ -39,8 +41,4 @@ public class ProfileController {
         URI uri = uriComponentsBuilder.path("/profile/{idProfile}").buildAndExpand(profileData.idProfile()).toUri();
         return ResponseEntity.created(uri).body(profileData);
     }
-
-
-
-
 }
