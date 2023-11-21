@@ -7,7 +7,7 @@ public record SiteData(
         Long userCode,
         String name,
         String address,
-        String icon
+        Long icon
 ) {
     public SiteData(Site site) {
         this(site.getSiteCode(), site.getUser().getUserCode(), site.getName(), site.getAddress(), site.getIcon());

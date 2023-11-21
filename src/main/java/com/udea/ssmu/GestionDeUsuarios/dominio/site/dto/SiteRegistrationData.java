@@ -10,7 +10,7 @@ public record SiteRegistrationData(
         String name,
         @NotBlank
         String address,
-        @NotBlank
-        String icon
+        @NotNull
+        Long icon
 ) {
 }

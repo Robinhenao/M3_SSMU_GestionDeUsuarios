@@ -29,9 +29,9 @@ public class Site {
     String address;
 
     @Column(length = 300)
-    String icon;
+    Long icon;
 
-    public Site(String name, String address, String icon, User user) {
+    public Site(String name, String address, Long icon, User user) {
         this.name = name;
         this.address = address;
         this.icon  = icon;
