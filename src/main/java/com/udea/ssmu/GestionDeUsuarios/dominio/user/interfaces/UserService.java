@@ -1,6 +1,6 @@
 package com.udea.ssmu.GestionDeUsuarios.dominio.user.interfaces;
 
-import com.udea.ssmu.GestionDeUsuarios.dominio.user.User;
+
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserRegistrationData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.user.dto.UserUpdateData;

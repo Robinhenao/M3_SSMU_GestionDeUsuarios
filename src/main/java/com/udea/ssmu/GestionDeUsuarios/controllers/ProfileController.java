@@ -3,7 +3,6 @@ package com.udea.ssmu.GestionDeUsuarios.controllers;
 
 import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileData;
 import com.udea.ssmu.GestionDeUsuarios.dominio.profile.dto.ProfileRegistrationData;
-import com.udea.ssmu.GestionDeUsuarios.dominio.profile.ProfileServiceImpl;
 import com.udea.ssmu.GestionDeUsuarios.dominio.profile.interfaces.ProfileService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/profile")
-@CrossOrigin
+@CrossOrigin("*")
 public class ProfileController {
 
     ProfileService profileService;

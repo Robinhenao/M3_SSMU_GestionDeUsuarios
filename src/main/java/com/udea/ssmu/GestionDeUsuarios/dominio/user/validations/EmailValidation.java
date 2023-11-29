@@ -15,7 +15,7 @@ public class EmailValidation implements UserValidator {
     @Override
     public void validate(UserRegistrationData data) {
         if (this.userRepository.existsByIdDocument(data.idDocument())){
-            throw new CustomValidationException("idDocument","The ID document (" + data.idDocument() +") is already in use.");
+            throw new CustomValidationException("Email","The ID Email (" + data.idDocument() +") is already in use.");
         }
     }
 }
